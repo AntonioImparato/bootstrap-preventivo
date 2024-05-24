@@ -14,19 +14,19 @@
 <body>
 
     <!-- nav bar -->
-    <header>
+    <header class="mb-4">
         <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body " data-bs-theme="dark">
 
             <div class="container-fluid">
                 <div class="container">
 
 
-                    <div class="row justify-content-between">
-                        <div class="col-2">
+                    <div class="row g-5 ">
+                        <div class="col-9 ">
                             <a class="navbar-brand text-white" href="#">Bool Factory</a>
                         </div>
-                        <div class="col-2">
-                            <button class="navbar-toggler border border-secondary-subtle text-white-50" type="button"
+                        <div class="col-3 ">
+                            <button class="navbar-toggler border border-secondary-subtle text-white-50 " type="button"
                                 data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
                                 aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
@@ -52,18 +52,130 @@
         <!-- /nav bar -->
     </header>
 
+    <div class="container ">
+        <main class="mb-5">
+            <!-- riga -->
+            <div class="row g-5">
+                <!--colonna 1-->
+                <div class="col-md-12 col-lg-8">
+                    <h1 class="">Richiesta Preventivo</h1>
+                    <p class="mb-3">compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
+                    <!--inizio del form acquisizioni dati dall'utente-->
+                    <form class="needs-validation" novalidate="">
+                        <div class="row g-3">
+                            <!--nome-->
+                            <div class="col-12">
+                                <label for="Nome" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="Nome" placeholder="" value="" required="">
+                                <div class="invalid-feedback">
+                                    Nome non valido.
+                                </div>
+                            </div>
+                            <!--/nome-->
+                            <!--cognome-->
+                            <div class="col-12">
+                                <label for="Cognome" class="form-label">Cognome</label>
+                                <input type="text" class="form-control" id="Cognome" placeholder="" value=""
+                                    required="">
+                                <div class="invalid-feedback">
+                                    Cognome non valido.
+                                </div>
+                            </div>
+                            <!--/cognome-->
+                            <!--e-mail-->
+                            <div class="col-12">
+                                <label for="email" class="form-label">Email </label>
+                                <input type="email" class="form-control" id="email">
+                                <div class="invalid-feedback">
+                                    e-mail non valida.
+                                </div>
+                            </div>
+                            <!--/ e-mail-->
+                            <!--tipi di attivita-->
+                            <div class="col-12 ">
+                                <label for="lavoro" class="form-label">Tipo di lavoro </label>
+                                <select class="form-select" id="lavoro" required="">
+                                    <option value="">seleziona il tipo di lavoro</option>
+                                    <option value="backend">sviluppo backend</option>
+                                    <option value="frontend">sviluppo frontend</option>
+                                    <option value="analisi">analisi progettuale</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Scegli l'attività
+                                </div>
+                            </div>
+                            <!--/tipi di attivita-->
+                            <!--descrizione lavoro-->
+                            <div class="col-12 mt-3 mb-3">
+                                <label for="descrizione" class="form-label">Descrivi la lovorazione </label>
+                                <textarea class="form-control" id="descrizione" rows="3"></textarea>
+                                <div class="invalid-feedback">
+                                    Inserisci descrizione
+                                </div>
+                            </div>
+                            <!--/descrizione lavoro-->
+                            <!--promo-->
+                            <div class="col-12 mb-3">
+                                <label for="promo" class="form-label">Codice promozionale<span
+                                        class="text-body-secondary">(Opzionale)</span></label>
+                                <input type="text" class="form-control" id="promo">
+                            </div>
+                            <!--/promo-->
+                            <!--privacy-->
+                            <div class="form-check mb-3">
+                                <input type="checkbox" class="form-check-input" id="privacy">
+                                <label class="form-check-label" for="privacy">Accetto la privacy policy</label>
+                            </div>
+                            <!--/privacy-->
 
-    <main>
-        <div class="container mt-3">
-            <h1 class="fs-3 fw-bold"> Richiesta Preventivo</h1>
-        </div>
+                            <div class="container d-flex justify-content-evenly">
 
-    </main>
+                                <button class=" btn btn-primary" type="submit">Calcola preventivo</button>
+                                <button class=" btn btn-primary" type="submit">Calcola preventivo</button>
 
 
+                            </div>
 
-    <footer>
+                        </div>
 
+
+
+
+
+                    </form>
+                    <!--/fine del form acquisizioni dati dall'utente-->
+                </div>
+                <!--/colonna 1-->
+
+
+                <!-- colonna 2 card-->
+                <div class="col-md-12 col-lg-4 ">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's
+                                content.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--/ colonna 2 card -->
+
+
+
+
+            </div>
+            <!--/riga-->
+
+
+
+        </main>
+    </div>
+
+
+    <footer class="navbar navbar-expand-lg bg-dark border-bottom border-body">
+        <p class="text-white"> © </p>
 
     </footer>
 
