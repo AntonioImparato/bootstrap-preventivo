@@ -16,11 +16,8 @@
     <!-- nav bar -->
     <header class="mb-4">
         <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body " data-bs-theme="dark">
-
             <div class="container-fluid">
                 <div class="container">
-
-
                     <div class="row g-5 ">
                         <div class="col-9 ">
                             <a class="navbar-brand text-white" href="#">Bool Factory</a>
@@ -45,31 +42,33 @@
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </div>
+            </div>
         </nav>
         <!-- /nav bar -->
     </header>
 
-    <div class="container ">
+    <!--main-->
+    <div class="container mb-4">
         <main class="mb-5">
             <!-- riga -->
             <div class="row g-5">
                 <!--colonna 1-->
-                <div class="col-md-12 col-lg-8">
+                <div class="col-sm-12 col-lg-8">
                     <h1 class="">Richiesta Preventivo</h1>
                     <p class="mb-3">compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
                     <!--inizio del form acquisizioni dati dall'utente-->
-                    <form class="needs-validation" novalidate="">
+                    <form class="needs-validation" novalidate method="get">
                         <div class="row g-3">
                             <!--nome-->
                             <div class="col-12">
-                                <label for="Nome" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="Nome" placeholder="" value="" required="">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="nome" value="" required>
                                 <div class="invalid-feedback">
-                                    Nome non valido.
+                                    nome non valido
                                 </div>
+
                             </div>
                             <!--/nome-->
                             <!--cognome-->
@@ -85,7 +84,7 @@
                             <!--e-mail-->
                             <div class="col-12">
                                 <label for="email" class="form-label">Email </label>
-                                <input type="email" class="form-control" id="email">
+                                <input type="email" class="form-control" id="email" placeholder="" required="">
                                 <div class="invalid-feedback">
                                     e-mail non valida.
                                 </div>
@@ -108,7 +107,8 @@
                             <!--descrizione lavoro-->
                             <div class="col-12 mt-3 mb-3">
                                 <label for="descrizione" class="form-label">Descrivi la lovorazione </label>
-                                <textarea class="form-control" id="descrizione" rows="3"></textarea>
+                                <textarea class="form-control" id="descrizione" rows="3" placeholder=""
+                                    required=""></textarea>
                                 <div class="invalid-feedback">
                                     Inserisci descrizione
                                 </div>
@@ -118,42 +118,46 @@
                             <div class="col-12 mb-3">
                                 <label for="promo" class="form-label">Codice promozionale<span
                                         class="text-body-secondary">(Opzionale)</span></label>
-                                <input type="text" class="form-control" id="promo">
+                                <input type="text" class="form-control" id="promo" placeholder="" required="">
                             </div>
                             <!--/promo-->
                             <!--privacy-->
                             <div class="form-check mb-3">
-                                <input type="checkbox" class="form-check-input" id="privacy">
+                                <input type="checkbox" class="form-check-input" id="privacy" required="">
                                 <label class="form-check-label" for="privacy">Accetto la privacy policy</label>
                             </div>
                             <!--/privacy-->
-
-                            <div class="container d-flex justify-content-evenly">
-
+                            <!--bottono per invio form-->
+                            <div class="container d-flex justify-content-evenly mb-5">
+                                <button class=" btn btn-primary " type="submit">Calcola preventivo</button>
                                 <button class=" btn btn-primary" type="submit">Calcola preventivo</button>
-                                <button class=" btn btn-primary" type="submit">Calcola preventivo</button>
-
-
                             </div>
-
+                            <!--/bottono per invio form-->
                         </div>
-
-
-
-
-
                     </form>
                     <!--/fine del form acquisizioni dati dall'utente-->
                 </div>
                 <!--/colonna 1-->
 
 
+
+
+
+
+
+
+
+
+
+
+
                 <!-- colonna 2 card-->
-                <div class="col-md-12 col-lg-4 ">
+                <div class="col-sm-12 col-lg-4 ">
                     <div class="card" style="width: 18rem;">
                         <img src="img/img1.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text">Some quick example text to build on the card title and make up
+                                the bulk
                                 of the card's
                                 content.</p>
                         </div>
@@ -167,26 +171,25 @@
 
             </div>
             <!--/riga-->
-
-
-
         </main>
     </div>
+    <!--/main-->
 
-
-    <footer class="navbar navbar-expand-lg bg-dark border-bottom border-body">
-        <p class="text-white"> © </p>
-
+    <!--pie di pagina-->
+    <footer>
+        <div class="bg-dark text-secondary px-4 py-2 text-center">
+            <div class="py-2">
+                <h5 class="display-5  text-white fs-6"> © tutti i diritti riservati.</h5>
+            </div>
+        </div>
     </footer>
-
-
-
-
+    <!--/pie di pagina-->
 
     <!-- script bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="main.js"></script>
     <!-- /script bootstrap-->
 </body>
 
