@@ -1,4 +1,4 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+//       validatore di inserimento dati form Bootstrap
 (() => {
     'use strict'
 
@@ -17,3 +17,15 @@
         }, false)
     })
 })()
+//   /validatore di inserimento dati form Bootstrap
+
+
+
+
+
+
+
+
+
+
+
