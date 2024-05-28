@@ -14,7 +14,7 @@ const promo = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
 let parteIntera = 0;
 let parteDecimale = 0;
 
-// dichiarazione variabili
+
 
 
 
@@ -25,7 +25,7 @@ function sconto(scontoApplicato) {
     return scontoApplicato.toFixed(2);
 
 }
-// funzione per applicare lo sconto
+// funzione per prezzo
 
 
 
@@ -36,7 +36,7 @@ function noSconto(tariffa) {
     return tariffa.toFixed(2);
 
 }
-// funzione per la tariffa normale 
+
 
 
 //funzione per dividere il numero 
@@ -57,6 +57,8 @@ function dividiPrezzoScontato(prezzo) {
 
 }
 
+
+//funzione per scomporre il numero 
 function dividiPrezzo(prezzo) {
     // Convertire il numero in una stringa
     let numeroStringa = prezzo.toString().replace('.', ',');
@@ -69,22 +71,26 @@ function dividiPrezzo(prezzo) {
     let parteIntera = parseInt(parti[0], 10);
     let parteDecimale = parseInt(parti[1], 10);
     document.getElementById('parteIntera').textContent = '€ ' + parteIntera;
-    document.getElementById('parteDecimale').textContent = parteDecimale + ' prezzo senza sconto';
+    document.getElementById('parteDecimale').textContent = parteDecimale;
 }
 
 
 //form 
 invioDati.addEventListener('submit', function (event) {
     event.preventDefault();
-    let servizio = document.getElementById('lavoro');
-    servizio = lavoro.value;
-    let offerta = document.getElementById('promo');
-    offerta = offerta.value.toUpperCase();
+
+    // Verifica validità dei campi
+    if (!invioDati.checkValidity()) {
+        invioDati.classList.add('was-validated');
+        return;
+    }
+
+    // Ottieni i valori dei campi del form
+    let servizio = document.getElementById('lavoro').value;
+    let offerta = document.getElementById('promo').value.toUpperCase();
+    let errore = document.getElementById('errore');
     let esempio = '';
     let prezzo = 0;
-
-
-
 
     // controllo per codice sconto
     promo.forEach(function (element) {
@@ -111,7 +117,7 @@ invioDati.addEventListener('submit', function (event) {
         }
     }
     // codice sconto assente o non vaido. nessuno sconto 
-    else {
+    else if (offerta === '') {
         if (servizio === sviluppoBackend) {
             prezzo = noSconto(sviluppoBackendPrezzo);
             dividiPrezzo(prezzo);
@@ -124,6 +130,28 @@ invioDati.addEventListener('submit', function (event) {
         } else if (servizio === analisiProgettuale) {
             prezzo = noSconto(analisiProgettualePrezzo);
             dividiPrezzo(prezzo);
+
+        }
+    }
+
+
+    else {
+        if (servizio === sviluppoBackend) {
+            prezzo = noSconto(sviluppoBackendPrezzo);
+            dividiPrezzo(prezzo);
+            errore.textContent = ' CODICE ERRATO';
+
+        }
+        else if (servizio === sviluppoFrontend) {
+            prezzo = noSconto(sviluppoFrontendPrezzo);
+            dividiPrezzo(prezzo);
+            errore.textContent = ' CODICE ERRATO';
+
+
+        } else if (servizio === analisiProgettuale) {
+            prezzo = noSconto(analisiProgettualePrezzo);
+            dividiPrezzo(prezzo);
+            errore.textContent = ' CODICE ERRATO';
 
         }
     }
