@@ -37,27 +37,6 @@ function noSconto(tariffa) {
 }
 
 
-
-//funzione per dividere il numero 
-function dividiPrezzoScontato(prezzo) {
-    // Convertire il numero in una stringa
-    let numeroStringa = prezzo.toString().replace('.', ',');
-
-
-    // Dividere la stringa in base alla virgola
-    let parti = numeroStringa.split(',');
-
-    // Convertire le parti in numeri interi
-    let parteIntera = parseInt(parti[0], 10);
-    let parteDecimale = parseInt(parti[1], 10);
-    // scrivi il risultto nel html
-    document.getElementById('parteIntera').textContent = '€ ' + parteIntera + '.';
-    document.getElementById('parteDecimale').textContent = parteDecimale;
-
-
-}
-
-
 //funzione per scomporre il numero 
 function dividiPrezzo(prezzo) {
     // Convertire il numero in una stringa
@@ -106,16 +85,16 @@ invioDati.addEventListener('submit', function (event) {
         avviso.classList.add('d-none');
         if (servizio === sviluppoBackend) {
             prezzo = sconto(sviluppoBackendPrezzo);
-            dividiPrezzoScontato(prezzo);
+            dividiPrezzo(prezzo);
 
         }
         else if (servizio === sviluppoFrontend) {
             prezzo = sconto(sviluppoFrontendPrezzo);
-            dividiPrezzoScontato(prezzo);
+            dividiPrezzo(prezzo);
 
         } else if (servizio === analisiProgettuale) {
             prezzo = sconto(analisiProgettualePrezzo);
-            dividiPrezzoScontato(prezzo);
+            dividiPrezzo(prezzo);
 
         }
     }
