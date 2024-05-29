@@ -120,6 +120,9 @@
                                         class="text-body-secondary">(Opzionale)</span></label>
                                 <input type="text" class="form-control" id="promo" placeholder="" value="">
                             </div>
+                            <div class="container d-flex">
+                                <span id="errore" class="badge text-bg-danger d-none">CODICE ERRATO</span>
+                            </div>
                             <!--/promo-->
                             <!--privacy-->
                             <div class="form-check mb-3">
@@ -132,14 +135,12 @@
                                 <button class=" btn btn-primary " type="submit">Calcola preventivo</button>
 
                                 <h3 id="prezzoFinale" class="card-title pricing-card-title">
-                                    <span id="parteIntera"></span>.<small id="parteDecimale"
+                                    <span id="parteIntera"></span><small id="parteDecimale"
                                         class="text-body-secondary fw-light"></small>
                                 </h3>
 
                             </div>
-                            <div class="container d-flex justify-content-evenly mb-5">
-                                <h4 id="errore"></h4>
-                            </div>
+
                             <!--/bottono per invio form-->
                         </div>
                     </form>

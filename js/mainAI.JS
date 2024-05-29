@@ -25,14 +25,13 @@ function sconto(scontoApplicato) {
     return scontoApplicato.toFixed(2);
 
 }
-// funzione per prezzo
 
 
 
 // funzione per la tariffa normale 
 function noSconto(tariffa) {
     tariffa = (tariffa * ore);
-
+    // ritorna il numero con massimo 2 decimali
     return tariffa.toFixed(2);
 
 }
@@ -51,7 +50,8 @@ function dividiPrezzoScontato(prezzo) {
     // Convertire le parti in numeri interi
     let parteIntera = parseInt(parti[0], 10);
     let parteDecimale = parseInt(parti[1], 10);
-    document.getElementById('parteIntera').textContent = '€ ' + parteIntera;
+    // scrivi il risultto nel html
+    document.getElementById('parteIntera').textContent = '€ ' + parteIntera + '.';
     document.getElementById('parteDecimale').textContent = parteDecimale;
 
 
@@ -70,7 +70,8 @@ function dividiPrezzo(prezzo) {
     // Convertire le parti in numeri interi
     let parteIntera = parseInt(parti[0], 10);
     let parteDecimale = parseInt(parti[1], 10);
-    document.getElementById('parteIntera').textContent = '€ ' + parteIntera;
+    // scrivi il risultto nel html
+    document.getElementById('parteIntera').textContent = '€ ' + parteIntera + '.';
     document.getElementById('parteDecimale').textContent = parteDecimale;
 }
 
@@ -88,7 +89,7 @@ invioDati.addEventListener('submit', function (event) {
     // Ottieni i valori dei campi del form
     let servizio = document.getElementById('lavoro').value;
     let offerta = document.getElementById('promo').value.toUpperCase();
-    let errore = document.getElementById('errore');
+    let avviso = document.getElementById('errore');
     let esempio = '';
     let prezzo = 0;
 
@@ -101,6 +102,8 @@ invioDati.addEventListener('submit', function (event) {
 
     // codice sconto corretto. applica sconto sul servizio richiesto 
     if (esempio === 'true') {
+        // rimuovi l'avviso
+        avviso.classList.add('d-none');
         if (servizio === sviluppoBackend) {
             prezzo = sconto(sviluppoBackendPrezzo);
             dividiPrezzoScontato(prezzo);
@@ -116,8 +119,12 @@ invioDati.addEventListener('submit', function (event) {
 
         }
     }
-    // codice sconto assente o non vaido. nessuno sconto 
+    // codice sconto assente  
     else if (offerta === '') {
+        //rimuovi l'avviso di errore
+        avviso.classList.add('d-none');
+
+
         if (servizio === sviluppoBackend) {
             prezzo = noSconto(sviluppoBackendPrezzo);
             dividiPrezzo(prezzo);
@@ -134,24 +141,27 @@ invioDati.addEventListener('submit', function (event) {
         }
     }
 
-
+    // codice sconto erratto 
     else {
+        //aggiungi avviso errore codice sconto 
+        avviso.classList.remove('d-none');
+
+
         if (servizio === sviluppoBackend) {
             prezzo = noSconto(sviluppoBackendPrezzo);
             dividiPrezzo(prezzo);
-            errore.textContent = ' CODICE ERRATO';
+
 
         }
         else if (servizio === sviluppoFrontend) {
             prezzo = noSconto(sviluppoFrontendPrezzo);
             dividiPrezzo(prezzo);
-            errore.textContent = ' CODICE ERRATO';
 
 
         } else if (servizio === analisiProgettuale) {
             prezzo = noSconto(analisiProgettualePrezzo);
             dividiPrezzo(prezzo);
-            errore.textContent = ' CODICE ERRATO';
+
 
         }
     }
