@@ -54,12 +54,10 @@ invioDati.addEventListener('submit', function (event) {
     let applicaSconto = promo.includes(offerta);
 
     // aggiungi o rimuovi avviso cliente codice errato 
-    if (applicaSconto) {
+    if (applicaSconto || offerta === '') {
         avviso.classList.add('d-none');
-    } else if (offerta !== '') {
-        avviso.classList.remove('d-none');
     } else {
-        avviso.classList.add('d-none');
+        avviso.classList.remove('d-none');
     }
 
     //controllo in base al servizio cliente richiesto + controllo codice sconto
